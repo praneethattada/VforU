@@ -1,0 +1,87 @@
+
+    <nav class="navbar navbar-expand-lg navbar-light shadow" id="navbar_top" style="background-color: white;">
+        <div class="container-fluid py-0">
+          <a class="navbar-brand ms-lg-5" href="#"><img class="img-fluid" src="./assets/img/Vforu-Logo 2.png" width="140px" alt=""></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+              <li class="nav-item me-3" id="under-line">
+                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+              </li>
+              <li class="nav-item me-3" id="under-line">
+                <a class="nav-link active" aria-current="page" href="aboutUs.html">About us</a>
+              </li>
+              
+              
+              <li class="nav-item me-3" id="under-line">
+                <a class="nav-link active" aria-current="page" href="contactUs.html">Contact Us</a>
+              </li>
+            </ul>
+            <div class="d-flex">
+              <button class="btn btn-danger me-lg-5" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" >Get Instant Call back </button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                  <div class="">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container">
+
+                      <div class="row">
+
+                        <div class="col-8">
+                          <h5>NEED A SERVICE?</h5>
+                          <h2 class="pb-3" >GET INSTANT CALL BACK</h2>
+                          <form name="callBack" method="post" action="">
+                            <input type="text" name="Name" style="border-radius: 8px;" class="form-control mt-4 py-3 px-4 " placeholder="Enter Name" aria-label="Enter Name" required>
+                            <input type="telNo" name="Contact Number" style="border-radius: 8px;" class="form-control mt-4 py-3 px-4" placeholder="Enter Contact No" aria-label="Enter Contact No" minlength="10" maxlength="10" pattern="[789][0-9]{9}" required>
+                            <input type="email" name="Email" style="border-radius: 8px;" class="form-control mt-4 py-3 px-4 " placeholder="Enter Email" aria-label="Enter Email" required>
+                            <div class="mt-4 d-flex justify-content-between">
+                              <a class=" text-dark" data-bs-dismiss="modal">No Thanks</a>
+                              <button type="submit" class="btn btn-dark">Submit Now</button>
+                            </div>
+                        </form>
+                          
+                        </div>
+  
+                        <div class="col-4" id="img-col">
+                          <img class="img-fluid my-auto pt-5 mt-5"  src="assets/img/Frame 21.png">
+                          
+                        </div>
+  
+                      </div>
+
+                    </div>
+                    
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+
+
+            <script>
+              const scriptURL = 'https://script.google.com/macros/s/AKfycbxGI0VigNr266KTmWHW687CIBHNkaklEwMEA-nPPAnkjyKlv6P3s-SNCFOxN_txrCaJ/exec'
+              const form = document.forms['callBack']
+              form.addEventListener('submit', e => {
+                  e.preventDefault()
+                  fetch(scriptURL, {
+                          method: 'POST',
+                          body: new FormData(form)
+                      })
+                      .then(response => location.reload())
+                      .catch(error => console.error('Error!', error.message))
+              })
+             </script>
+          
+
+
+          </div>
+        </div>
+      </nav>
